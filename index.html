@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <title>Rajesh-react-practice</title>
+</head>
+<body>
+
+    <!-- HTML way to Print Hello World -->
+    <div id="root">
+        <!-- This Below h1 tag will be replaced by root element from App.js using render function in react-->
+        <!-- <h1>
+            hello world!
+        </h1> -->
+    </div>
+
+    <!-- JavaScript way Print Hello World -->
+    <!-- <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML='Hello World From JavaScript';
+
+        const root = document.getElementById('root');
+        
+        root.appendChild(heading);
+
+        console.log("value",heading );
+    </script> -->
+
+    <!-- Imported React using CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- React way to Print Hello World -->
+    <!-- <script>
+        createElement is an object which take three attribute
+        1. attribute is HTML tag
+        2. it will be an object where we can pass html attribute
+        3. we can pass text and child object also we can pass multiple createElemt obj using array[]
+        const heading = React.createElement("h1", {id="heading"} -> this ia an attribute to , "Hello React World!");
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        root.render(heading);
+    </script> -->
+
+    <!-- Improting Js code another file -->
+    <script src="./App.js"></script>
+
+</body>
+
+</html>
