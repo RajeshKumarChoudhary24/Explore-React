@@ -1,14 +1,5 @@
-
-{/* <div id="parent">
-    <div id="child1">
-        <h1>Hello World Nested React</h1>
-        <h2>sibling</h2>
-    </div>
-    <div id="child2">
-        <h1>Hello World Nested React</h1>
-        <h2>sibling</h2>
-    </div>
-</div> */}
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const parent = React.createElement( 
     "div",
