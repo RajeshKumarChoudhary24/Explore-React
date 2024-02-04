@@ -1,20 +1,36 @@
+import React from "react";
 import ResturantCard from "./ResturantCard"
 import restList from "../utils/mockData"
+import { useState } from "react";
 
-//Under map Not using key is (Not acceptable bec React will re-render all element and it will cause performance issue)
-//Key as a Index (Not a good practice not recomanded)
-//Unique id as key(best practice)
-
-
+//React Hooks
 const Body = () =>{
+
+  // on the fly we are doing array destructuring
+  let [listOfResturant, setListOfResturant] = useState(restList);
+  
+  // we can write above code like this also it is just array destructuring
+  //let arr = useState(restList);
+  //let [listOfResturant, setListOfResturant] = arr; OR
+  //const listOfResturant = arr[0];
+  //const setListOfResturant = arr[1];
+  
     return(
         <div className="body">
-            <div className="search">
-                <input placeholder="Seach food"></input>
-                <button>Search</button>
+            <div className="filter">
+                <button 
+                className="filter-btn"
+                onClick={()=>{
+                    const filterlistofresturant = listOfResturant.filter((rest)=>rest.info.avgRating>4);
+                    setListOfResturant(filterlistofresturant);
+                    console.log("filterlistofresturant",filterlistofresturant);
+                }
+                } 
+                >
+                Top Rated Resturant</button>
             </div>
             <div className="resturant-container">
-                {restList.map((restaurant) => (
+                {listOfResturant.map((restaurant) => (
                     <ResturantCard key={restaurant.info.id} resData={restaurant}/>
                 ))}
             </div>
