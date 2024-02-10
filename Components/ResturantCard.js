@@ -8,7 +8,8 @@ const ResturantCard =(props)=>{
         cuisines,
         areaName,
         costForTwo,
-        avgRating
+        avgRating,
+        sla
     } = resData?.info;
     return(
         <div className="resturant-card"> 
@@ -18,6 +19,7 @@ const ResturantCard =(props)=>{
             <h5>{areaName}</h5>
             <h5>{costForTwo}</h5>
             <h5>Ratings {avgRating}</h5>
+            <h5>{sla?.slaString}</h5>
         </div>
     )
 };
